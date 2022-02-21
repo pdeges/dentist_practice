@@ -46,9 +46,7 @@ body {
 .main {
   background-color: var(--light);
 }
-.header__logo {
-  max-width: 220px;
-}
+
 .icon-button--patient {
   background-image: url("/images/patienten.png");
 }
@@ -112,6 +110,7 @@ body {
   margin-bottom: 10em;
 }
 .header__logo {
+  max-width: 220px;
   grid-row: 2/4;
   grid-column: 3/4;
 }
@@ -182,6 +181,7 @@ body {
   align-items: center;
   padding: 1.5em 2.5em;
   border-radius: 2em;
+  flex-wrap: wrap;
 }
 .icon__button--pencil {
   background-image: url(images/edit.png);
@@ -198,6 +198,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 4em;
+  flex-wrap: wrap;
 
 }
 .card__title {
@@ -243,4 +244,71 @@ a:hover {
 }
 .icon:hover {
   cursor: pointer;
+}
+.hamburger {
+  margin: 20px;
+  color: var(--aqua);
+  font-size: 3.5em;
+  z-index: 999;
+  position: absolute;
+  visibility: hidden;
+}
+
+
+
+@media (max-width: 576px) {
+  .sidebar {
+    visibility: hidden;
+    width: 100%;
+  }
+  .hamburger {
+    visibility: visible;
+  }
+  .main {
+    margin-left: 0;
+
+  }
+
+  .header__logo {
+    max-width: 140px;
+    grid-row: 2/4;
+    grid-column: 2/ span 2;
+
+  }
+  .header__options {
+    margin-left: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left: auto;
+    margin-top: 10px;
+  }
+
+  .header__options__lang__text, .header__options__user__text {
+    font-size: 1.2em;
+  }
+
+ .icon {
+  min-width: 3.5em;
+  min-height: 3.5em;
+  background-size: 3.5em;
+
+  }
+  .patients-list__card {
+    flex-wrap: wrap;
+  }
+  .card__content {
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: flex-start;
+  }
+  .card__actions {
+    margin-top: 1em;
+  }
+  .card__actions .icon {
+    min-width: 5em;
+
+  }
+
 }
